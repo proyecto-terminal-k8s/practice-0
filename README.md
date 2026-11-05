@@ -15,7 +15,17 @@ Docker debe responder sin errores y las dos herramientas deben estar instaladas:
 
 ```bash
 docker info
+```
+
+Comprueba que Docker está instalado, se puede conectar con el daemon y el usuario tiene los permisos necesarios.
+
+```bash
 minikube version
+```
+
+Muestra la versión instalada de Minikube.
+
+```bash
 kubectl version --client
 ```
 
@@ -37,7 +47,17 @@ control y dos nodos de trabajo. Cada nodo recibe 2048 MiB de memoria.
 
 ```bash
 minikube status
+```
+
+Comprueba si el perfil local está activo y muestra el estado de sus componentes.
+
+```bash
 kubectl cluster-info
+```
+
+Muestra la dirección de la API de Kubernetes y los servicios principales accesibles.
+
+```bash
 kubectl get nodes -o wide
 ```
 
@@ -46,6 +66,11 @@ El resultado esperado de `kubectl get nodes` es una lista de tres nodos en estad
 
 ```bash
 kubectl get namespaces
+```
+
+Lista los namespaces existentes, incluidos los espacios de sistema creados por Kubernetes.
+
+```bash
 kubectl get pods --all-namespaces
 ```
 
@@ -55,15 +80,27 @@ Ejecuta estos comandos uno por uno cuando quieras probar cada operación:
 
 ```bash
 minikube pause
+```
+
+Suspende los recursos del clúster sin eliminar los nodos ni la configuración.
+
+```bash
 minikube unpause
+```
+
+Reanuda los recursos después de haber pausado el clúster.
+
+```bash
 minikube stop
+```
+
+Apaga los nodos del clúster y conserva su configuración y datos.
+
+```bash
 minikube start
 ```
 
-- `pause` suspende los recursos del clúster sin eliminarlo.
-- `unpause` reanuda un clúster pausado.
-- `stop` apaga sus nodos y conserva su configuración.
-- `start` vuelve a iniciar el perfil existente.
+Vuelve a iniciar el perfil existente después de haberlo detenido.
 
 ## Limpieza
 
